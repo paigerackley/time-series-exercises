@@ -7,7 +7,7 @@ def prep_store_data(df):
     df = df.set_index('sale_date').sort_index()
     df = df.rename(columns={'sale_amount': 'quantity'})
     df['month'] = df.index.strftime('%m-%b')
-    df['dow'] = df.index.strftime('%w-%a')
+    df['day_of_week'] = df.index.strftime('%w-%a')
     df['sales_total'] = df.quantity * df.item_price
     return df
 
